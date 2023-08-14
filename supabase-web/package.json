@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "supabase:gentypes": "yarn supabase gen types typescript --project-id ivrnsiypeuywzncgbfga > src/types/schema.ts"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "latest",

@@ -18,5 +18,5 @@ export async function GET(request: Request) {
   }
 
   // URL to redirect to after sign in process completes
-  return NextResponse.redirect('https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io/')
+  return NextResponse.redirect(requestUrl.origin)
 }

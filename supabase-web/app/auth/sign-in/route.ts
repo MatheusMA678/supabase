@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
   if (error) {
     return NextResponse.redirect(
-      `https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io/login?error=Could not authenticate user`,
+      `${requestUrl.origin}/login?error=Could not authenticate user`,
       {
         // a 301 status is required to redirect from a POST to a GET route
         status: 301,
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     )
   }
 
-  return NextResponse.redirect('https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io', {
+  return NextResponse.redirect(requestUrl.origin, {
     // a 301 status is required to redirect from a POST to a GET route
     status: 301,
   })

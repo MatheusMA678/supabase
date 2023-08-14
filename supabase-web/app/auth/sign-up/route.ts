@@ -15,13 +15,13 @@ export async function POST(request: Request) {
     email,
     password,
     options: {
-      emailRedirectTo: `https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io/auth/callback`,
+      emailRedirectTo: `${requestUrl.origin}/auth/callback`,
     },
   })
 
   if (error) {
     return NextResponse.redirect(
-      `https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io/login?error=Could not authenticate user`,
+      `${requestUrl.origin}/login?error=Could not authenticate user`,
       {
         // a 301 status is required to redirect from a POST to a GET route
         status: 301,
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.redirect(
-    `https://3000-matheusma678-rnsupabase-3092ilm18w6.ws-us102.gitpod.io/login?message=Check email to continue sign in process`,
+    `${requestUrl.origin}/login?message=Check email to continue sign in process`,
     {
       // a 301 status is required to redirect from a POST to a GET route
       status: 301,
